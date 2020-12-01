@@ -55,6 +55,19 @@ function mobileNumberValidation()
 	fi
 }
 
+function passwordValidation()
+{
+	pass=$1;
+	pattern5="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
+
+	if [[ $pass =~ $pattern5 ]]
+	then
+  		echo "$pass is valid"
+	else
+  		echo "$pass is not valid"
+}
+
+
 read -p "Enter the First Name : " fname
 fNameValidation fname
 
@@ -67,3 +80,9 @@ emailValidation email
 echo "Example: 99 8844556644
 read -p "Enter Mobile Number : " mnumber
 mobileNumberValidation mnumber
+
+echo "RULES FOR PASSWORD"
+echo "Minimum 8 characters + 1 Uppercase letter + 1 Special Symbol + 1 Numberic"
+echo "Example: 99 8844556644
+read -p "Enter the Password : " pass
+passwordValidation pass
