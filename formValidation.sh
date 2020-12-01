@@ -16,9 +16,24 @@ function fNameValidation()
 	fi
 }
 
+function lNameValidation()
+{
+	lname=$1;
+	pattern2="^[A-Z a-z]{3,}"
+
+	if [[ $lname =~ $pattern2 ]]
+	then
+  		echo "$lname is valid"
+	else
+  		echo "$lname is not valid"
+	fi
+}
 
 
 
 read -p "Enter the First Name : " fname
 fNameValidation fname
+
+read -p "Enter Last Name : " lname
+lNameValidation lname
 
