@@ -29,7 +29,18 @@ function lNameValidation()
 	fi
 }
 
+function emailValidation()
+{
+	email=$1;
+	pattern3="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
 
+	if [[ $email =~ $pattern3 ]]
+	then
+  		echo "$email is valid"
+	else
+  		echo "$email is not valid"
+	fi
+}
 
 read -p "Enter the First Name : " fname
 fNameValidation fname
@@ -37,3 +48,5 @@ fNameValidation fname
 read -p "Enter Last Name : " lname
 lNameValidation lname
 
+read -p "Enter Email Id : " email
+emailValidation email
