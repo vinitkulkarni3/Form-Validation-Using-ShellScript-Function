@@ -42,6 +42,19 @@ function emailValidation()
 	fi
 }
 
+function mobileNumberValidation()
+{
+	mnumber=$1;
+	pattern4="^((([9][1][ ])\d{10}))$"
+
+	if [[ $mnumber =~ $pattern4 ]]
+	then
+  		echo "$mnumber is valid"
+	else
+  		echo "$mnumber is not valid"
+	fi
+}
+
 read -p "Enter the First Name : " fname
 fNameValidation fname
 
@@ -50,3 +63,7 @@ lNameValidation lname
 
 read -p "Enter Email Id : " email
 emailValidation email
+
+echo "Example: 99 8844556644
+read -p "Enter Mobile Number : " mnumber
+mobileNumberValidation mnumber
